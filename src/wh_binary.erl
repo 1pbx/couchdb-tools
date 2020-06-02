@@ -99,7 +99,7 @@ hex(S) ->
 
 -spec rand_hex(pos_integer()) -> ne_binary().
 rand_hex(Size) when is_integer(Size) andalso Size > 0 ->
-    hex(crypto:rand_bytes(Size)).
+    hex(crypto:strong_rand_bytes(Size)).
 
 binary_to_hex_char(N) when N < 10 -> $0 + N;
 binary_to_hex_char(N) when N < 16 -> $a - 10 + N.
